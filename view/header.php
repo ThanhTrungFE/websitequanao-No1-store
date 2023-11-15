@@ -9,7 +9,8 @@
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
+                        <ul class="nav" style="margin-top:4%">
+                            
                             <li class="scroll-to-section"><a href="index.php" class="active">Trang chủ</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">Sản phẩm</a>
@@ -25,7 +26,15 @@
                             <li><a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:30px"></i></a></li>
                             
                             <li class="scroll-to-section" style="font-size: 20px;"><a href="./view/login.php">Login</a></li>
-                            
+                            <li><form action="">
+                                <div style="border:none;border-bottom:1px solid #ccc; margin-top:3%; margin-left:20px;" >
+                                
+                                <input type="text" style="border: none; " placeholder="Tìm kiếm">
+                                <button type="submit" style="border:none; background:white"><i class="fa fa-search"></i></button>
+                                </div>
+                                
+                            </form>
+                            </li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

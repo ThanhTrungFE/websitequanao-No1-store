@@ -30,13 +30,13 @@
                                             <label class="form-label" for="form2Example17">Địa chỉ Email</label>
                                             <input type="email" name="email" id="form2Example17"
                                                 class="form-control form-control-lg" />
-
+                                                <span style="color:red;"><?php echo isset($_SESSION['email'])?$_SESSION['email']:''?></span>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27">Mật khẩu</label>
                                             <input type="password" name="password" id="form2Example27"
                                                 class="form-control form-control-lg" />
-
+                                                <span style="color:red;"><?php echo isset($_SESSION['password'])?$_SESSION['password']:''?></span>
                                         </div>
 
                                         <div class="pt-1 mb-4">
@@ -46,7 +46,7 @@
 
                                         <a class="small text-muted" href="Forgotpassword.php">Quên mật khẩu?</a>
                                         <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn chưa có tài khoản? <a
-                                                href="register.php" style="color: red;">Đăng ký ở đây</a></p>
+                                                href="?act=register" style="color: red;">Đăng ký ở đây</a></p>
                                     </form>
 
                                 </div>

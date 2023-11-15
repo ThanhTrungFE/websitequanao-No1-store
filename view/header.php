@@ -25,7 +25,8 @@
                             <li class="scroll-to-section"><a href="./view/contact.php">Hỏi đáp</a></li>
                             <li><a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:30px"></i></a></li>
                             
-                            <li class="scroll-to-section" style="font-size: 20px;"><a href="?act=login">Login</a></li>
+                            <li class="scroll-to-section" style="font-size: 20px;"><a href="?act=login"><i class="fa fa-user" style="font-size:26px"></i></a></li>
+                            <li class="scroll-to-section" style="font-size: 20px;"><a href="?act=login"><i class="fa fa-heart-o" style="font-size:26px ;color:red"></i></a></li>
                             <li><form action="">
                                 <div style="border:none;border-bottom:1px solid #ccc; margin-top:3%; margin-left:20px;" >
                                 

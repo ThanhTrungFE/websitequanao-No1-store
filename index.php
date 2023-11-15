@@ -25,9 +25,49 @@
         $act=$_GET['act'];
         switch($act){
             case 'register':
+                if(isset($_POST['register'])){
+                    if(empty($_POST['user'])){
+                        $_SESSION['user']="Không được bỏ trống trường này";
+                    }else{
+                        $user = $_POST['user'];
+                    }
+
+                    if(empty($_POST['email'])){
+                        $_SESSION['email']="Không được bỏ trống trường này";
+                    }else{
+                        $email = $_POST['email'];
+                    }
+
+                    if(empty($_POST['password'])){
+                        $_SESSION['password']="Không được bỏ trống trường này";
+                    }else{
+                        $password=$_POST['password'];
+                    }
+
+                    if(empty($_POST['repassword'])){
+                        $_SESSION['repassword']="Không được bỏ trống trường này";
+                    }else if($_POST['repassword'] != $_POST['password']){
+                        $_SESSION['repassword']="Không đúng định dạng password";
+                    }
+                }
                 include "view/register.php";
                 break;
             case 'login':
+                if(isset($_POST['login'])&&$_POST['login']){
+                    if(empty($_POST['email'])){
+                        $_SESSION['email']="Không được để trống trường này";
+                    }else{
+                        $email = $_POST['email'];
+                    }
+
+                    if(empty($_POST['password'])){
+                        $_SESSION['password']="Không được để trống trường này";
+                    }else{
+                        $password = $_POST['password'];
+                    }
+
+
+                }
                 include 'view/login.php';
                 break;
         }

@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer_iner text-center">
-                            <p>2023 - Designed by Quang<a href="#"> <i class="ti-heart"></i></a></p>
+                            <p>2023 - Designed by Quanggg<a href="#"> <i class="ti-heart"></i></a></p>
                         </div>
                     </div>
                 </div>

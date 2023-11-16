@@ -29,26 +29,30 @@
                     <div class="col-12">
                         <div class="page_title_box d-flex align-items-center justify-content-between">
                             <div class="page_title_left">
-                                <h3 class="f_s_30 f_w_700 text_white">Thêm danh mục</h3>
+                                <h3 class="f_s_30 f_w_700 text_white">Cập nhật danh mục</h3>
                             </div>
                         </div>
                     </div>
                 </div>
+                <?php
+                if (is_array($dm)) {
+                    extract($dm);
+                }
+                ?>
                 <div class="container pt-5 mt-5">
-                    <form action="index.php?act=addddm" method="POST">
+                    <form action="index.php?act=updatedm" method="POST">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Id danh mục</label>
-                            <input type="text" name="maloai" class="form-control" id="exampleFormControlInput1"disabled>
+                            <label for="exampleFormControlInput1" class="form-label">Id</label>
+                            <input type="text" name="maloai" class="form-control" id="exampleFormControlInput1" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Tên danh mục</label>
-                            <input type="text" name="tenloai" class="form-control" id="exampleFormControlInput1">
-                            <span style="color:red;"><?php echo isset($_SESSION['tenloai'])?$_SESSION['tenloai']:''?></span>
+                            <input type="text" name="tenloai" class="form-control" id="exampleFormControlInput1" value="<?php if (isset($name) && $name != "") echo $name; ?>">
                         </div>
                         <div class="mb-3 d-flex justify-content-center">
+                            <input type="" name="id" class="form-control" id="exampleFormControlInput1" value="<?php if (isset($categorys_id) && ($categorys_id > 0)) echo $categorys_id; ?>">
                             <button type="reset" class="btn btn-secondary mx-2">Nhập lại</button>
-                            <!-- <button type="submit" name="submit" class="btn btn-success mx-2">Thêm mới</button> -->
-                            <input type="submit" name="submit" class="btn btn-success mx-2" value="Thêm mới">
+                            <input type="submit" name="capnhat" class="btn btn-success mx-2" value="Cập nhật">
                         </div>
                     </form>
                 </div>

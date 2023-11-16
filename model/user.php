@@ -5,10 +5,11 @@
     }
 
     function checkuser($email, $password)
-{
-    $sql = "SELECT * FROM users where email = '$email' AND password = '$password'";
-    $p = pdo_query_one($sql);
-    return $p;
-}
+    {
+        $sql = "SELECT * FROM users where email = '$email' AND password = '$password'";
+        $p = pdo_query_one($sql);
+        return $p;
+    }
+    
 
 ?>

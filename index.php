@@ -1,3 +1,11 @@
+<?php
+    include "model/pdo.php";
+    include "model/user.php";
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,6 +56,13 @@
                         $_SESSION['repassword']="Không được bỏ trống trường này";
                     }else if($_POST['repassword'] != $_POST['password']){
                         $_SESSION['repassword']="Không đúng định dạng password";
+                    }
+
+                    if(!isset($_SESSION['user'])&&!isset($_SESSION['email'])&&!isset($_SESSION['password'])&&!isset($_SESSION['repassword'])){
+                        insert_taikhoan($user,$email,$password);
+                        
+                    }else{
+                        echo "Add không thành công";
                     }
                 }
                 include "view/register.php";

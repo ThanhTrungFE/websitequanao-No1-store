@@ -56,13 +56,13 @@
             </div>
         </div>
     </header>
-    
+
     <div class="page-heading about-page-heading" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Đăng nhập tài khoản</h2>
+                        <h2>Đăng nhập tài khoản @</h2>
                     </div>
                 </div>
             </div>

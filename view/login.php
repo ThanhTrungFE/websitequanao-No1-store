@@ -56,6 +56,7 @@
             </div>
         </div>
     </header>
+    
     <div class="page-heading about-page-heading" id="top">
         <div class="container">
             <div class="row">

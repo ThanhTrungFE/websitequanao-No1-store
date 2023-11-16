@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="../../css/metisMenu.css">
 
-    <link rel="stylesheet" href="../../css/style1.css"/>
+    <link rel="stylesheet" href="../../css/style1.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -165,11 +165,16 @@
             </div>
         </div>
     </section>
+    <!-- test -->
+    <section>
+        <h1>Mai</h1>
+    </section>
+    <!-- end test -->
     <!-- end main  -->
     <script src="../../js/jquery1-3.4.1.min.js"></script>
-    
+
     <script src="../../js/metisMenu.js"></script>
-    
+
     <script src="../../js/custom.js"></script>
 </body>
 

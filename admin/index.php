@@ -134,6 +134,9 @@
                 $listAll = listAll();
                 include 'product/Products.php';
                 break;
+            case '':
+                
+                break;
         }
     } else {
         include "home.php";

@@ -4,6 +4,12 @@ function isert_danhmuc($tenloai)
     $sql = "INSERT INTO `categorys`(`name`) VALUES ('$tenloai')";
     pdo_execute($sql);
 }
+function loade_danhmuc1()
+{
+    $sql = "SELECT * FROM `categorys`";
+    $listdanhmuc = pdo_query($sql);
+    return $listdanhmuc;
+}
 function loade_danhmuc()
 {
     $sql = "SELECT * FROM categorys order by categorys_id";

@@ -15,26 +15,38 @@
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Tên sản phẩm</label>
                         <input type="text" name="tensp" class="form-control" id="exampleFormControlInput1">
-                        <span style="color:red;"><?php echo isset($_SESSION['tensp'])?$_SESSION['tensp']:''?></span>
+                        <span style="color:red;"><?php echo isset($_SESSION['tensp']) ? $_SESSION['tensp'] : '' ?></span>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Ảnh sản phẩm</label>
                         <input type="file" name="img" class="form-control" id="exampleFormControlInput1">
-                        <span style="color:red;"><?php echo isset($_SESSION['img'])?$_SESSION['img']:''?></span>
+                        <span style="color:red;"><?php echo isset($_SESSION['img']) ? $_SESSION['img'] : '' ?></span>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Giá sản phẩm</label>
                         <input type="text" name="giasp" class="form-control" id="exampleFormControlInput1">
-                        <span style="color:red;"><?php echo isset($_SESSION['giasp'])?$_SESSION['giasp']:''?></span>
+                        <span style="color:red;"><?php echo isset($_SESSION['giasp']) ? $_SESSION['giasp'] : '' ?></span>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>
                         <textarea class="form-control" name="mota" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        <span style="color:red;"><?php echo isset($_SESSION['mota'])?$_SESSION['mota']:''?></span>
+                        <span style="color:red;"><?php echo isset($_SESSION['mota']) ? $_SESSION['mota'] : '' ?></span>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" >
+                        <label for="exampleFormControlInput1" class="form-label">Chọn size</label>
+                        <select class="form-select" name="iddm" aria-label="Default select example">
+                            <?php
+                            foreach ($listSize as $size) {
+                                extract($size);
+                                echo '<option value="' . $sizeao_id . '">' . $size . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="mb-3" >
                         <label for="exampleFormControlInput1" class="form-label">Danh mục</label>
                         <select class="form-select" name="iddm" aria-label="Default select example">
+                            <option value="0">Chọn loại sản phẩm</option>
                             <?php
                             foreach ($listdanhmuc as $danhmuc) {
                                 extract($danhmuc);
@@ -48,7 +60,7 @@
                         <button type="submit" name="themmoi" class="btn btn-success mx-2">Thêm mới</button>
                     </div>
                     <?php
-                        if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
+                    if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
                     ?>
                 </form>
             </div>

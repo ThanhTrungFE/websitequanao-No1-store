@@ -6,24 +6,54 @@
     Version: 1.0
     Created: Colorlib
 ---------------------------------------------------------  */
+//lay size
+var radioButtons = document.getElementsByName('size');
+var selectedSizeInput = document.getElementById('selectedSizeInput');
+radioButtons.forEach(function (radioButton) {
+    radioButton.addEventListener('change', function () {
+        if (radioButton.checked) {
+            selectedSizeInput.value = radioButton.value;
+        }
+    });
+});
+//lay so luong
+var decreaseButton = document.getElementById('decreaseQuantity');
+var increaseButton = document.getElementById('increaseQuantity');
+var quantitySpan = document.getElementById('productQuantity');
+var selectedQuantityInput = document.getElementById('selectedQuantity');
 
-'use strict';
-//tang sp trong gio hang
-var decreaseButton = document.getElementById("decreaseQuantity");
-var increaseButton = document.getElementById("increaseQuantity");
-var quantitySpan = document.getElementById("productQuantity");
-
-decreaseButton.addEventListener("click", function () {
-    var currentQuantity = parseInt(quantitySpan.innerHTML);
-    if (currentQuantity > 1) {
-        quantitySpan.innerHTML = (currentQuantity - 1).toString();
+decreaseButton.addEventListener('click', function () {
+    var currentQuantity = parseInt(quantitySpan.textContent);
+    if (!isNaN(currentQuantity) && currentQuantity > 1) {
+        quantitySpan.textContent = currentQuantity - 1;
+        selectedQuantityInput.value = currentQuantity - 1;
     }
 });
 
-increaseButton.addEventListener("click", function () {
-    var currentQuantity = parseInt(quantitySpan.innerHTML);
-    quantitySpan.innerHTML = (currentQuantity + 1).toString();
+increaseButton.addEventListener('click', function () {
+    var currentQuantity = parseInt(quantitySpan.textContent);
+    if (!isNaN(currentQuantity)) {
+        quantitySpan.textContent = currentQuantity + 1;
+        selectedQuantityInput.value = currentQuantity + 1;
+    }
 });
+'use strict';
+//tang sp trong gio hang
+// var decreaseButton = document.getElementById("decreaseQuantity");
+// var increaseButton = document.getElementById("increaseQuantity");
+// var quantitySpan = document.getElementById("productQuantity");
+
+// decreaseButton.addEventListener("click", function () {
+//     var currentQuantity = parseInt(quantitySpan.innerHTML);
+//     if (currentQuantity > 1) {
+//         quantitySpan.innerHTML = (currentQuantity - 1).toString();
+//     }
+// });
+
+// increaseButton.addEventListener("click", function () {
+//     var currentQuantity = parseInt(quantitySpan.innerHTML);
+//     quantitySpan.innerHTML = (currentQuantity + 1).toString();
+// });
 
 (function ($) {
 

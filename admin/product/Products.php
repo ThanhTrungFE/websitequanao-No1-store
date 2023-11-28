@@ -18,7 +18,7 @@
                             <th scope="col">Tên sản phẩm</th>
                             <th scope="col">Ảnh</th>
                             <th scope="col">Giá</th>
-                            <th scope="col">Mô tả</th>
+                            <th scope="col" style="width:30%">Mô tả</th>
                             <!-- <th scope="col">Lượt xem</th> -->
                             <th scope="col">Danh mục</th>
                             <th scope="col">Thao tác</th>
@@ -37,7 +37,7 @@
                                 <td><?php echo $sanpham['description'] ?></td>
                                 <td><?php echo $sanpham['category_id'] ?></td>
                                 <td>
-                                    <a href=""><button type="button" class="btn btn-primary">Xem</button></a>
+                                    <!-- <a href=""><button type="button" class="btn btn-primary">Xem</button></a> -->
                                     <a href="index.php?act=suasp&product_id=<?php echo $sanpham['product_id'] ?>"><button type="button" class="btn btn-success">Sửa</button></a>
                                     <a href="index.php?act=xoasp&product_id=<?php echo $sanpham['product_id'] ?>"><button type="button" class="btn btn-danger">Xóa</button></a>
                                 </td>

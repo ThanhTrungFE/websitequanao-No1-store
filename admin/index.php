@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="vendors/niceselect/css/nice-select.css" />
     <link rel="stylesheet" href="../css/metisMenu.css">
     <link rel="stylesheet" href="../css/style1.css" />
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
@@ -20,7 +21,9 @@
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
-    $listdanhmuc = loade_danhmuc();
+    include "../model/size.php";
+    // $listdanhmuc = loade_danhmuc();
+
     ?>
     <?php
     if ((isset($_GET['act'])) && ($_GET['act']) != "") {
@@ -54,7 +57,7 @@
                 if (isset($_GET['categorys_id']) && ($_GET['categorys_id'] > 0)) {
                     $dm = loadeone_danhmuc($_GET['categorys_id']);
                 }
-                include 'category/updateCatefory.php';
+                include 'category/updateCategory.php';
                 break;
             case 'updatedm':
                 if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
@@ -134,8 +137,33 @@
                 $listAll = listAll();
                 include 'product/Products.php';
                 break;
-            case '':
-                
+
+            case "addSize":
+                if (isset($_POST['submit']) && ($_POST['submit'])) {
+                    if (empty($_POST['tensize'])) {
+                        $_SESSION['tensize'] = "Không được bỏ trống";
+                    } else {
+                        $size = $_POST['tensize'];
+                    }
+                    if (!isset($_SESSION['tensize'])) {
+                        insert_size($size);
+                        // header("Location: index.php?act=listSize");
+                        $thongbao = "<span style='color:red'>Thêm thành công</span>";
+                    }
+                }
+                include 'size/addSize.php';
+                break;
+            case 'listSize':
+                $listSize = load_size();
+                include "size/size.php";
+                break;
+            case "deletesize":
+                if(isset($_GET['size_id'])&&($_GET['size_id'])){
+                    $size_id = $_GET['size_id'];
+                    delete_size($size_id);
+                }
+                $listSize = load_size();
+                include "size/size.php";
                 break;
         }
     } else {

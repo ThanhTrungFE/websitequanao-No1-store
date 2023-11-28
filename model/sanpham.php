@@ -62,3 +62,30 @@ function loadeone_sanphamCungloai($id, $iddm){
     $listsphome = pdo_query($sql);
     return $listsphome;
 }
+
+
+
+// hàm dành cho sản phẩm cùng loại bên chi tiết
+function sanpham_cungloai($id){
+    $sp = getone_sanpham($id);
+    $iddm = $sp['category_id'];
+    $sql = "SELECT * FROM products where category_id=$iddm and product_id <> $id limit 0,10";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+function getone_sanpham($id)
+{
+    $sql = "SELECT * FROM products WHERE product_id = '$id';";
+    $sp = pdo_query_one($sql);
+    return $sp;
+}
+
+function size_product($product_id){
+    $sql = "SELECT * FROM variants WHERE product_id='$product_id'";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+
+?>

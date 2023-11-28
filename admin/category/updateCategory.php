@@ -20,14 +20,14 @@
                     <form action="index.php?act=updatedm" method="POST">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Id</label>
-                            <input type="text" name="maloai" class="form-control" id="exampleFormControlInput1" disabled>
+                            <input type="" name="id" class="form-control" id="exampleFormControlInput1" value="<?php if (isset($categorys_id) && ($categorys_id > 0)) echo $categorys_id; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Tên danh mục</label>
                             <input type="text" name="tenloai" class="form-control" id="exampleFormControlInput1" value="<?php if (isset($name) && $name != "") echo $name; ?>">
                         </div>
                         <div class="mb-3 d-flex justify-content-center">
-                            <input type="" name="id" class="form-control" id="exampleFormControlInput1" value="<?php if (isset($categorys_id) && ($categorys_id > 0)) echo $categorys_id; ?>">
+                            
                             <button type="reset" class="btn btn-secondary mx-2">Nhập lại</button>
                             <input type="submit" name="capnhat" class="btn btn-success mx-2" value="Cập nhật">
                         </div>

@@ -36,6 +36,17 @@
         <li class>
             <a class="has-arrow" href="#" aria-expanded="false">
                 <div></div>
+                <span>Size</span>
+            </a>
+            <ul>
+                <li><a href="?act=listSize">Danh sách size</a></li>
+                <li><a href="?act=addSize">Thêm size</a></li>
+                <li><a href="#">Thùng rác</a></li>
+            </ul>
+        </li>
+        <li class>
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <div></div>
                 <span>Tài khoản</span>
             </a>
             <ul>

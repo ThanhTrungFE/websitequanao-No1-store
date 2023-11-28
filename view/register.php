@@ -29,27 +29,27 @@
                                             <label class="form-label" for="form2Example17">Tên đăng nhập</label>
                                             <input type="text" name="user" id="form2Example17"
                                                 class="form-control form-control-lg" />
-                                                <span style="color:red;"><?php echo isset($_SESSION['user'])?$_SESSION['user']:''?></span>
+                                                <span style="color:red;"><?php echo isset($error_user)?$error_user:''?></span>
 
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example17">Địa chỉ Email</label>
                                             <input type="email" name="email" id="form2Example17"
                                                 class="form-control form-control-lg" />
-                                                <span style="color:red;"><?php echo isset($_SESSION['email'])?$_SESSION['email']:''?></span>
+                                                <span style="color:red;"><?php echo isset($error_email)?$error_email:''?></span>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27">Mật khẩu</label>
                                             <input type="password" name="password" id="form2Example27"
                                                 class="form-control form-control-lg" />
-                                                <span style="color:red;"><?php echo isset($_SESSION['password'])?$_SESSION['password']:''?></span>
+                                                <span style="color:red;"><?php echo isset($error_pass)?$error_pass:''?></span>
 
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27"> Nhập Lại Mật khẩu</label>
                                             <input type="password" name="repassword" id="form2Example27"
                                                 class="form-control form-control-lg" />
-                                                <span style="color:red;"><?php echo isset($_SESSION['repassword'])?$_SESSION['repassword']:''?></span>
+                                                <span style="color:red;"><?php echo isset($error_repass)?$error_repass:''?></span>
                                         </div>
                                         <div class="pt-1 mb-4">
                                             <input name="register" value="Đăng kí" class="btn btn-dark btn-lg btn-block"
@@ -57,7 +57,11 @@
                                         </div>
                                         <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn đã có tài khoản? <a
                                                 href="?act=login" style="color: red;">Đăng nhập ở đây</a></p>
-                                    </form>
+                                                <?php if (isset($thongbao))
+                                                    echo $thongbao;
+                                                ?>
+                                            </form>
+                                  
                                 </div>
                             </div>
                         </div>
